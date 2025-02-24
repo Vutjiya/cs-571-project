@@ -1,1 +1,1 @@
-# cs-571-project
+# CS 571 Project
