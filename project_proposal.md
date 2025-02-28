@@ -41,24 +41,24 @@ Many of our optional features focus on aesthetics, as we feel the argument is th
 
 ## Project Schedule
 
-Week 1: look/clean data
+Week 1: Initial research and forming arguments
 
-Week 2: look/clean data pt 2
+Week 2: Finalizaing data sources, cleaning data
 
-Week 3: Set up Introduction
+Week 3: Set up base site and introduction page
 
-Week 4: Work on 1st topic
+Week 4: Work on 1st topic page
 
 Week 5: Project Milestone (April 4th): 95% of introduction done, 75% 1st topic
 
-Week 6: Finish 1st topic and Intro
+Week 6: Finish 1st topic and intro
 
 Week 7: Feedback (April 16th): Start 2nd topic
 
-Week 8: Continue 2nd topic
+Week 8: Finalize 2nd topic, final bug fixes
 
-Week 9: Screencast (May 2nd):
+Week 9: Final UI edits, Screencast (May 2nd)
 
-Week 10:
+Week 10: Finalize process book
 
-Week 11: Final Deadline (May 12th):
+Week 11: Final Deadline (May 12th)
