@@ -1,10 +1,3 @@
----
-title: Project Proposal
-author: Danny Cedrone, Aditya Khurmi, Vutjiya Senabunyarithi
-date: February 28, 2025
-geometry: margin=1in
----
-
 ## Project Metadata
 
 - Project title: Distinguishing Fact and Fiction in Modern U.S. Politics
