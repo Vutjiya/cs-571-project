@@ -1,3 +1,7 @@
+::: {.no-print}
+# CS 571 Project Proposal
+:::
+
 ## Project Metadata
 
 - Project title: Distinguishing Fact and Fiction in Modern U.S. Politics
