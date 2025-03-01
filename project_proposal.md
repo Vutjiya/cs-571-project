@@ -1,4 +1,9 @@
-# Project Proposal
+---
+title: Project Proposal
+author: Danny Cedrone, Aditya Khurmi, Vutjiya Senabunyarithi
+date: February 28, 2025
+geometry: margin=1in
+---
 
 ## Project Metadata
 
@@ -7,7 +12,7 @@
   - jcedrone@umass.edu
   - akhurmi@umass.edu
   - vsenabunyari@umass.edu
-- Spire IDs
+- Spire IDs:
   - 33176603 - Danny Cedrone
   - 33053216 - Aditya Khurmi
   - 32873540 - Vutjiya Senabunyarithi
