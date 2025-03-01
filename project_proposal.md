@@ -1,6 +1,4 @@
-::: {.no-print}
 # CS 571 Project Proposal
-:::
 
 ## Project Metadata
 
