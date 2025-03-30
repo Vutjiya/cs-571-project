@@ -9,9 +9,9 @@ import Q3 from './pages/Q3';
 function App() {
   return (
     <>
+    <Sidebar className='sidebar'/>
     <Router>
       <div className='App'>
-        <Sidebar className='sidebar'/>
         <div className='content'>
           <Routes>
             <Route path='/'>
