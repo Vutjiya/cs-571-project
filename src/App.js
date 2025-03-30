@@ -1,17 +1,35 @@
 import './App.css';
 import Sidebar from './components/Sidebar';
-import { BrowserRouter as Routes, Route } from 'react-router';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import Intro from './pages/Intro';
+import Q1 from './pages/Q1';
+import Q2 from './pages/Q2';
+import Q3 from './pages/Q3';
 
 function App() {
   return (
     <>
-    <Sidebar className='sidebar'/>
-    <Routes>
-      {/* <Route path='/' element={<Intro />} /> */}
-      {/* <Route path="/q1" element={<Question1 />} /> */}
-      {/* <Route path="/q2" element={<Question2 />} /> */}
-      {/* <Route path="/q3" element={<Question3 />} /> */}
-    </Routes>
+    <Router>
+      <div className='App'>
+        <Sidebar className='sidebar'/>
+        <div className='content'>
+          <Routes>
+            <Route path='/'>
+              <Route index element={ <Intro /> } />
+            </Route>
+            <Route path='/q1'>
+              <Route index element={ <Q1 /> } />
+            </Route>
+            <Route path='/q2'>
+              <Route index element={ <Q2 /> } />
+            </Route>
+            <Route path='/q3'>
+              <Route index element={ <Q3 /> } />
+            </Route>
+          </Routes>
+        </div>
+      </div>
+    </Router>
     </>
   );
 }
