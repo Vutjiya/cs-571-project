@@ -41,10 +41,11 @@ a {
     padding: 10px 20px;
     display: block;
     font-weight: 600;
-    transition: 0.5s;
+    transition: 0.3s;
+    text-align: center;
 }
 
 .navbar ul li a:hover {
-    color: gray;
+    color: steelblue;
 }
 
