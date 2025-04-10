@@ -1,12 +1,13 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
+    background-color: var(--bg-color);
 }
 
-a {
-    text-decoration: none;
-    color: black;
+:root {
+    --bg-color: #d8dbe0;
+    --text-color: #2f3033;
 }
 
 .container {
@@ -24,28 +25,42 @@ a {
 .navbar {
     background: #fff;
     padding: 20px;
+    background-color: var(--bg-color);
 }
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
 .navbar .menu ul {
     display: flex;
     list-style: none;
+    gap: .5rem;
 }
 
 .navbar ul li a {
-    padding: 10px 20px;
-    display: block;
+    padding: 10px 30px;
     font-weight: 600;
     transition: 0.3s;
     text-align: center;
+    border-radius: 7px;
+    border: 2px solid steelblue;
+    text-decoration: none;
+    color: black;
 }
 
 .navbar ul li a:hover {
-    color: steelblue;
+    background-color: steelblue;
 }
 
+.page-body {
+    color: var(--text-color);
+}
+
+.vid {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 100px;
+}
