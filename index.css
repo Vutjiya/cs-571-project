@@ -28,24 +28,26 @@ a {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
 .navbar .menu ul {
     display: flex;
     list-style: none;
+    gap: 10px;
 }
 
 .navbar ul li a {
-    padding: 10px 20px;
-    display: block;
+    padding: 10px 30px;
     font-weight: 600;
     transition: 0.3s;
     text-align: center;
+    border-radius: 7px;
+    border: 2px solid steelblue;
 }
 
 .navbar ul li a:hover {
-    color: steelblue;
+    background-color: steelblue;
 }
 
