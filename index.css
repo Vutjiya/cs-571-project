@@ -7,6 +7,7 @@
 
 :root {
     --bg-color: #d8dbe0;
+    --text-color: #2f3033;
 }
 
 .container {
@@ -36,7 +37,7 @@
 .navbar .menu ul {
     display: flex;
     list-style: none;
-    gap: 10px;
+    gap: .5rem;
 }
 
 .navbar ul li a {
@@ -54,3 +55,12 @@
     background-color: steelblue;
 }
 
+.page-body {
+    color: var(--text-color);
+}
+
+.vid {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 100px;
+}
