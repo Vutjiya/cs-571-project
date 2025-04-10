@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
+    background-color: var(--bg-color);
 }
 
-a {
-    text-decoration: none;
-    color: black;
+:root {
+    --bg-color: #d8dbe0;
 }
 
 .container {
@@ -24,6 +24,7 @@ a {
 .navbar {
     background: #fff;
     padding: 20px;
+    background-color: var(--bg-color);
 }
 
 .navbar .container {
@@ -45,6 +46,8 @@ a {
     text-align: center;
     border-radius: 7px;
     border: 2px solid steelblue;
+    text-decoration: none;
+    color: black;
 }
 
 .navbar ul li a:hover {
