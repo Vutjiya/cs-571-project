@@ -9,11 +9,6 @@ migrant_convictions <- read_tsv("migrant_convictions.tsv")
 # https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads%23nibrs-downloads (Summary Report System)
 national_crimes <- read_csv("national_crimes.csv")
 
-# inmate_data %>%
-#   select(
-#     where(\(col) !all(col == 999, na.rm = TRUE) && mean(is.na(col)) <= 0.5)
-#   ) %>%
-
 migrant_data <- migrant_convictions %>%
   rename(crime = `Conviction Type`) %>%
   mutate(
@@ -51,8 +46,6 @@ migrant_data <- migrant_convictions %>%
     year <= 2023
   ) %>%
   relocate(year)
-
-# toJSON(pretty = TRUE)
 
 crimes_data <- national_crimes %>%
   select(!c(caveats, rape_legacy)) %>%
@@ -107,4 +100,5 @@ crimes_data <- national_crimes %>%
   summarize(incidents = sum(incidents))
 
 bind_rows(list(migrants = migrant_data, national = crimes_data), .id = "id") %>%
-  toJSON(pretty = TRUE)
+  toJSON(pretty = TRUE) %>%
+  write_json(path = "crime_incidents.json")
