@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>571 Project</title>
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css"/>
+  
+
   <!-- <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="js/Tree.js"></script>
   <script src="js/Node.js"></script>
@@ -14,30 +16,75 @@
 </head>
 
 <body>
+    <hr>
     <nav class="navbar">
         <div class="container">
+            <!-- <div class="site-title">
+                571 Project
+            </div> -->
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="index.html">Intro</a>
+                        <a href="index.html">About</a>
                     </li>
                     <li>
-                        <a href="Q1.html">Q1</a>
+                        <a href="Q1.html">Study 1: Migrant Crime</a>
                     </li>
                     <li>
-                        <a href="Q2.html">Q2</a>
+                        <a href="Q2.html">Study 2: Economy under Biden</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="Q3.html">Q3</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
-    <h1>
-        Q2
-    </h1>
+    <hr>
     <script src="js/main.js"></script>
+
+    <div class="page-body">
+        <h1 style="font-size: 1.5cm;">
+            <center>Employment under Biden</center>
+        </h1><br/>
+    </div>
+
+
+    <div class="text">
+        <p>
+            Consider the unemployment rate.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque odio amet perferendis alias sunt? Doloribus, consequuntur quos. Reiciendis similique illum eaque, ipsa doloremque voluptates nesciunt dolores. Delectus, eaque modi.
+
+            <!-- https://ycharts.com/indicators/us_unemployment_rate#:~:text=US%20Unemployment%20Rate%20is%20at,but%20are%20without%20a%20job -->
+        </p>
+        <br>
+    </div>
+
+    <center><div id="chart_unemp"></div></center>
+
+    <div class="text">
+        <p>
+            Consider the inflation rate.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem culpa debitis, iusto sint impedit amet magnam ut recusandae obcaecati et optio omnis molestias accusamus a veniam quis dolorem eius ipsam?
+            <!-- https://www.usinflationcalculator.com/inflation/current-inflation-rates/ -->
+        </p>
+        <br>
+    </div>
+
+    <center><div id="chart_inf"></div></center>
+    
+
+    <div class="text">
+        <p>
+            Consider the GDP
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquam voluptatibus enim qui architecto nemo doloribus, commodi quas nobis praesentium reprehenderit velit repellendus quod delectus voluptatum soluta magnam aspernatur in?
+            <!-- https://fred.stlouisfed.org/series/GDP -->
+        </p>
+        <br>
+        <br>
+    </div>
+
+    <center><div id="plot_gdp"></div></center>
   <!-- <div id="root">
     <div id="buttons">
         <button type="submit" href="intro.html">Intro</button>
@@ -51,6 +98,9 @@
         <br> SPIRE ID: 33176603   
       </h6>
   </div> -->
+  <script type="module" src="script2.js"></script>
+  <!-- <script type = "module" src = "script3.js" defer></script>
+  <script type = "module" src = "script4.js" defer></script> -->
 </body>
 
 </html>
