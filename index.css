@@ -62,17 +62,15 @@
 .vid {
     display: flex;
     flex-direction: row;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
 }
 
-.vid div {
-    max-width: 50%;
+.img {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
 }
 
-@media screen and (max-width: 600px) {
-    .vid {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 100px;
-    }
-}
+div.migrant_crime {
+    text-indent: 0px;
+  }
