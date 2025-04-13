@@ -81,15 +81,44 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
       })
     ],
     height: 500,
-    marginLeft: 60,
+    marginLeft: 20,
     marginBottom: 80,
     style: {
       fontSize: "14px",
       fontFamily: "sans-serif"
     }
   });
+
+  const avg_data = [
+    { period: "Avg 2017-2019", value: 4, color : "red" },
+    { period: "Avg 2022-2025", value: 3.7, color : "blue" }
+  ];
+
+  const bar_chart = Plot.plot({
+    width: 300,
+    height: 500,
+    marginBottom: 20,
+    x: {
+      label: null
+    },
+    y: {
+      label: "Unemployment Rate (%)",
+      domain: [0, 5] 
+    },
+    marks: [
+      Plot.barY(avg_data, { x: "period", y: "value", fill: "color"}),
+      Plot.text(avg_data, {
+        x: "period",
+        y: "value",
+        dy: -10,
+        text: d => d.value.toFixed(1),
+        fill: "black"
+      })
+    ]
+  });
   
   document.getElementById("chart_unemp").appendChild(chart_unemp);
+  document.getElementById("chart_unemp").appendChild(bar_chart);
 
   /**
   Inflation rate data
