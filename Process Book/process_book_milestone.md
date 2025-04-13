@@ -106,7 +106,7 @@ Current site design
 Current page 2 (Economy under Biden)
 ![Current design of claim #2](./images/page_2.png)
 Sketch of posible future design
-![Possible design for claim #2](./images/possible_desgin.png)
+![Possible design for claim #2](./images/possible_design.png)
 Having the text and charts be aligned horizontally may imporve readability and visual appeal.
 
 - Implementation:
