@@ -15,4 +15,4 @@
 Through this project, we aim to take a closer look at some bold claims which have been thrown around in the past few years as political tension in the United States has risen, and many of us are unsure what is fact or fiction.
 
 ## Viewing the website
-To view the site in its current form, simply download the codebase and from VS Code run index.html using the Live Server extension. The site will appear in your browser.
+This project is now live on Github pages and can be viewed at the following URL: [https://vutjiya.github.io/cs-571-project/](https://vutjiya.github.io/cs-571-project/)
