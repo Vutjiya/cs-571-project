@@ -124,40 +124,6 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
   Inflation rate data
   **/
 
-  // const data_inf = [
-  //   { date: "2019-01", inflation: 1.6 }, { date: "2019-02", inflation: 1.5 }, { date: "2019-03", inflation: 1.9 },
-  //   { date: "2019-04", inflation: 2.0 }, { date: "2019-05", inflation: 1.8 }, { date: "2019-06", inflation: 1.6 },
-  //   { date: "2019-07", inflation: 1.8 }, { date: "2019-08", inflation: 1.7 }, { date: "2019-09", inflation: 1.7 },
-  //   { date: "2019-10", inflation: 1.8 }, { date: "2019-11", inflation: 2.1 }, { date: "2019-12", inflation: 2.3 },
-  
-  //   { date: "2020-01", inflation: 2.5 }, { date: "2020-02", inflation: 2.3 }, { date: "2020-03", inflation: 1.5 },
-  //   { date: "2020-04", inflation: 0.3 }, { date: "2020-05", inflation: 0.1 }, { date: "2020-06", inflation: 0.6 },
-  //   { date: "2020-07", inflation: 1.0 }, { date: "2020-08", inflation: 1.3 }, { date: "2020-09", inflation: 1.4 },
-  //   { date: "2020-10", inflation: 1.2 }, { date: "2020-11", inflation: 1.2 }, { date: "2020-12", inflation: 1.4 },
-  
-  //   { date: "2021-01", inflation: 1.4 }, { date: "2021-02", inflation: 1.7 }, { date: "2021-03", inflation: 2.6 },
-  //   { date: "2021-04", inflation: 4.2 }, { date: "2021-05", inflation: 5.0 }, { date: "2021-06", inflation: 5.4 },
-  //   { date: "2021-07", inflation: 5.4 }, { date: "2021-08", inflation: 5.3 }, { date: "2021-09", inflation: 5.4 },
-  //   { date: "2021-10", inflation: 6.2 }, { date: "2021-11", inflation: 6.8 }, { date: "2021-12", inflation: 7.0 },
-  
-  //   { date: "2022-01", inflation: 7.5 }, { date: "2022-02", inflation: 7.9 }, { date: "2022-03", inflation: 8.5 },
-  //   { date: "2022-04", inflation: 8.3 }, { date: "2022-05", inflation: 8.6 }, { date: "2022-06", inflation: 9.1 },
-  //   { date: "2022-07", inflation: 8.5 }, { date: "2022-08", inflation: 8.3 }, { date: "2022-09", inflation: 8.2 },
-  //   { date: "2022-10", inflation: 7.7 }, { date: "2022-11", inflation: 7.1 }, { date: "2022-12", inflation: 6.5 },
-  
-  //   { date: "2023-01", inflation: 6.4 }, { date: "2023-02", inflation: 6.0 }, { date: "2023-03", inflation: 5.0 },
-  //   { date: "2023-04", inflation: 4.9 }, { date: "2023-05", inflation: 4.0 }, { date: "2023-06", inflation: 3.0 },
-  //   { date: "2023-07", inflation: 3.2 }, { date: "2023-08", inflation: 3.7 }, { date: "2023-09", inflation: 3.7 },
-  //   { date: "2023-10", inflation: 3.2 }, { date: "2023-11", inflation: 3.1 }, { date: "2023-12", inflation: 3.4 },
-  
-  //   { date: "2024-01", inflation: 3.1 }, { date: "2024-02", inflation: 3.2 }, { date: "2024-03", inflation: 3.5 },
-  //   { date: "2024-04", inflation: 3.4 }, { date: "2024-05", inflation: 3.3 }, { date: "2024-06", inflation: 3.0 },
-  //   { date: "2024-07", inflation: 2.9 }, { date: "2024-08", inflation: 2.5 }, { date: "2024-09", inflation: 2.4 },
-  //   { date: "2024-10", inflation: 2.6 }, { date: "2024-11", inflation: 2.7 }, { date: "2024-12", inflation: 2.9 },
-  
-  //   { date: "2025-01", inflation: 3.0 }, { date: "2025-02", inflation: 2.8 }, { date: "2025-03", inflation: 2.4 }
-  // ];
-
   async function drawInflation() {
     const data_inf = await d3.csv("inflation.csv", d => ({
       date: new Date(d.Date),
