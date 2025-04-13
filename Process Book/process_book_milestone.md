@@ -43,11 +43,11 @@ In terms of data processing, we expect that there will be some data cleaning inv
 
 ## Visualization Design
 
-![Design-Sheet Page #1 Part #1](./images/design_sheet_1-1.jpg){ width=50% }![Design-Sheet Page #1 Part #2](./images/design_sheet_1-2.jpg){ width=50% }
+![Design-Sheet Page #1 Part #1](../Project%20Proposal/images/design_sheet_1-1.jpg){ width=50% }![Design-Sheet Page #1 Part #2](../Project%20Proposal/images/design_sheet_1-2.jpg){ width=50% }
 
-![Design-Sheet Page #2](./images/design_sheet_2.jpg){ width=33% }![Design-Sheet Page #3](./images/design_sheet_3.jpg){ width=33% }![Design-Sheet Page #4](./images/design_sheet_4.jpg){ width=33% }
+![Design-Sheet Page #2](../Project%20Proposal/images/design_sheet_2.jpg){ width=33% }![Design-Sheet Page #3](../Project%20Proposal/images/design_sheet_3.jpg){ width=33% }![Design-Sheet Page #4](../Project%20Proposal/images/design_sheet_4.jpg){ width=33% }
 
-![Design-Sheet Page #5 Part #1](./images/design_sheet_5-1.jpg){ width=50% }![Design-Sheet Page #5 Part #2](./images/design_sheet_5-2.jpg){ width=50% }
+![Design-Sheet Page #5 Part #1](../Project%20Proposal/images/design_sheet_5-1.jpg){ width=50% }![Design-Sheet Page #5 Part #2](../Project%20Proposal/images/design_sheet_5-2.jpg){ width=50% }
 
 
 ## Must-Have Features
@@ -98,11 +98,16 @@ Exploratory Data Analysis: What visualizations did you use to initially look at 
 - Design Evolution:
   - At this time our design choices remain about the same as they did for the project proposal. The site in its current state acts as a proof of concept for a three-fold approach to the visualization, with three pages of the site acting as the intro page and the two claims we will look into. Since our project relies on several smaller visualizations to tell a story rather than a single large visualization, we needed to take that into consideration when planning our design, as many of our defining features rely on the layout of the site rather than the individual visualizations. We thought about using scrollytelling to create one long story starting from the introduction and moving through each topic, however we decided that that could be overwhelming and harder to navigate. We believe that the site design we have now adds the most interactivity while still remaining usable.
 
-(Initial site prototype)
+Initial site prototype
 ![Initial site design](./images/original_intro_page.png)
-(Current site design)
+Current site design
 ![Updated site design #1](./images/updated_intro_page.png)
 ![Updated site design #2](./images/updated_intro_page_2.png)
+Current page 2 (Economy under Biden)
+![Current design of claim #2](./images/page_2.png)
+Sketch of posible future design
+![Possible design for claim #2](./images/possible_desgin.png)
+Having the text and charts be aligned horizontally may imporve readability and visual appeal.
 
 - Implementation:
   - We consider our site as a whole to function as our larger visualization, which is then broken into smaller parts where we can explore the data through charts and graphs. The interactivity feature of our site allows the user to switch between topics. As mentioned above, this is our alternative to scrollytelling for the whole project. It gives the user some interactivity and allows them to move through the project without sacrificing overall visual appeal and usability. In the second half of the project, we plan to add more interactive elements within the smaller individual visualizations. We haven’t finalized these ideas yet, but they may come in the form of an interactive choropleth of the United States.  
