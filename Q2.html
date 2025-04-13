@@ -5,52 +5,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>571 Project</title>
-  <link rel="stylesheet" href="index.css" />
-  <!-- <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="js/Tree.js"></script>
-  <script src="js/Node.js"></script>
-  <script src="js/script.js"></script> -->
-  
+  <link rel="stylesheet" href="index.css"/>
 </head>
 
 <body>
+    <hr>
     <nav class="navbar">
         <div class="container">
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="index.html">Intro</a>
+                        <a href="index.html">About</a>
                     </li>
                     <li>
-                        <a href="Q1.html">Q1</a>
+                        <a href="Q1.html">Study 1: Migrant Crime</a>
                     </li>
                     <li>
-                        <a href="Q2.html">Q2</a>
+                        <a href="Q2.html">Study 2: Economy under Biden</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="Q3.html">Q3</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
-    <h1>
-        Q2
-    </h1>
+    <hr>
     <script src="js/main.js"></script>
-  <!-- <div id="root">
-    <div id="buttons">
-        <button type="submit" href="intro.html">Intro</button>
-        <button>Q1</button>
-        <button>Q2</button>
-        <button>Q3</button>
+
+    <div class="page-body">
+        <h1 style="font-size: 1.5cm;">
+            <center>Economy under Biden</center>
+        </h1><br/>
     </div>
-    <h6>
-        Name: Danny Cedrone           
-        <br> UMass Email: jcedrone@umass.edu
-        <br> SPIRE ID: 33176603   
-      </h6>
-  </div> -->
+
+    <div class="text">
+        <h2>
+            According to Trump, the economy "went to hell" under Biden. But how true was this claim?
+        </h2>
+        <br>
+    </div>
+
+
+    <div class="text">
+        <p>
+            First let's consider the unemployment rate.
+            When we compare and contrast (un)employment rates, we have to be careful to disregard COVID-19, a non-political aspect that caused a major dent in the economy out of other things. From the point of view of unemployability, it's major impact was seen from 2020-2022, and stablized after that. Outside this range, the unemployment rate during the Biden administration was 3.4 - 4.2%, reaching the minimum that the US economy has seen in more than the last 35 years. Furthermore, this averaged around 3.7%, which was the lowest the rate ever got during Trump's administration.
+            <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque odio amet perferendis alias sunt? Doloribus, consequuntur quos. Reiciendis similique illum eaque, ipsa doloremque voluptates nesciunt dolores. Delectus, eaque modi. -->
+
+            <!-- https://ycharts.com/indicators/us_unemployment_rate#:~:text=US%20Unemployment%20Rate%20is%20at,but%20are%20without%20a%20job -->
+            <!-- https://www.statista.com/statistics/193290/unemployment-rate-in-the-usa-since-1990/ -->
+        </p>
+        <br>
+    </div>
+
+    <center><div id="chart_unemp" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
+    <!-- <right><div id="bar_unemp"></div></right> -->
+
+    <div class="text">
+        <p>
+            Consider the inflation rate. According to Trump, there was an "economic catastrophe and inflation nightmare" under Biden. However, the economy was doing much better under Biden than what Trump claimed, as we can see from the numbers. Post COVID-19, there was a steep fall, and the rate has roughly steadily decreased after that.
+            <!-- https://www.usinflationcalculator.com/inflation/current-inflation-rates/ -->
+        </p>
+        <br>
+    </div>
+
+    <center><div id="chart_inf"></div></center>
+    
+
+    <div class="text">
+        <p>
+            To conclude our argument, we now consider the GDP. The GDP has steadily increased, and post-pandemic, the economic growth has been considerably better than that of France, Germany and other G7 nations.
+            <!-- https://fred.stlouisfed.org/series/GDP -->
+        </p>
+        <br>
+        <br>
+    </div>
+
+    <center><div id="plot_gdp"></div></center>
+  <script type="module" src="js/script2.js"></script>
+  <!-- <script type = "module" src = "script3.js" defer></script>
+  <script type = "module" src = "script4.js" defer></script> -->
 </body>
 
 </html>
