@@ -124,7 +124,7 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
   Inflation rate data
   **/
 
-  async function drawInflation() {
+  async function draw_inflation() {
     const data_inf = await d3.csv("data/inflation.csv", d => ({
       date: new Date(d.Date),
       inflation: +d.inflation
@@ -160,7 +160,44 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
     document.getElementById("chart_inf").appendChild(chart_inf);
   }
 
-  drawInflation();  
+  async function draw_CPI() {
+    const data_inf = await d3.csv("data/cleaned_cpi.csv", d => ({
+      date: new Date(d.Year),
+      CPI: +d.cpi
+    }));
+  
+    const chart_inf = Plot.plot({
+      width: 1200,
+      height: 500,
+      x: {
+        type: "time",
+        label: "Date",
+        tickFormat: d => d.getFullYear().toString()
+      },
+      y: {
+        label: "CPI (%)",
+        grid: true
+      },
+      marks: [
+        Plot.line(data_inf, {
+          x: d => new Date(d.date),
+          y: "CPI",
+          stroke: "orange"
+        }),
+        Plot.dot(data_inf, {
+          x: d => new Date(d.date),
+          y: "CPI",
+          r: 2,
+          fill: "black"
+        })
+      ]
+    });
+  
+    document.getElementById("chart_inf").appendChild(chart_inf);
+  }
+
+  draw_inflation();  
+  draw_CPI();
 
    /**
   GDP rate data
