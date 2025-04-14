@@ -213,3 +213,16 @@ dpi_data %>%
 
 cpi_data %>%
   write_csv("cleaned_cpi.csv")
+
+total_crime_data %>%
+  ggplot(aes(x = year, y = incidents)) +
+  geom_point(color = "red") +
+  geom_line(color = "red") +
+  labs(
+    x = "Year",
+    y = "Crime Incidents",
+    title = "Number of Crime Incidents from 1980 to 2022"
+  ) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(labels = scales::comma)

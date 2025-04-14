@@ -99,7 +99,7 @@ Exploratory Data Analysis: What visualizations did you use to initially look at 
 
 - In our exploratory data analysis, for the dataset we had for national crime statistics, we made a prototype visual on the total number of incidents of violent, property, and sexual crimes and murder in the US.
 ![Line Plot Prototype](./images/us_crime_incidents.png)
-From this plot, we see that the overall crime rates have been decreasing since the 1990s and there has not been a rise in crime during the time that the Fox News claimed that there was a "Migrant Crime wave".
+From this plot, we see that the overall crime rates have been decreasing since the 1990s and there has not been a rise in crime during the time that Fox News claimed that there was a "Migrant Crime wave".
 
 Design Evolution:
 
