@@ -49,7 +49,6 @@ In terms of data processing, we expect that there will be some data cleaning inv
 
 ![Design-Sheet Page #5 Part #1](../Project%20Proposal/images/design_sheet_5-1.jpg){ width=50% }![Design-Sheet Page #5 Part #2](../Project%20Proposal/images/design_sheet_5-2.jpg){ width=50% }
 
-
 ## Must-Have Features
 
 For must-have features, we want to be able to include a thorough analysis of each of our claims, which would entail utilizing a variety of visualizations culminating to tell one story. In particular, we anticipate using many graphs such as line and bar graphs to show percent change over time. Our main goal is to have at least 2 visualizations per question. We will discuss the process of deciding on those visualizations later in our process book. In addition, we also want the visualization to tell a story through scrollytelling. This is an important part of our visualization as it will allow us to present our evidence in a logical order and ensure that the viewer is engaged with our content. We also need to have an introduction to the project overall, as well as a brief introduction/context for each topic. Finally, we feel it is a requirement to have at least 2 of the 3 topics we have chosen, and the third will be a stretch goal, which we will determine the feasibility of as the project progresses.
@@ -87,16 +86,24 @@ Week 11: Final Deadline (May 12th)
 - Overview and Motivation:
   - In the current political climate, it is impossible to ignore the flood of information that is given by social media and politicians. As a result, it is important to be able to critically think about the claims that are made on the current state of government, economy, and our society. We aim to focus on two main topics: the claim that migrant crime is on the rise, and the claim that the economy suffered greatly during the Biden administration. Through examining these claims, we aim to provide an overview on these different topics that have been main, recent talking points in the media and by politicians from a data-driven, evidence-based perspective. By doing so, we want to be able to determine whether these sweeping, overarching assertions hold any weight, or if they are just propaganda.
 - Related Work:
-  - For the format of our visualizations, we were inspired by the New York Times’ effective use of scrollytelling, particularly in this article about the fire at Notre Dame. We hope to use scrollytelling later in the project as this was a very impactful visualization. We were also inspired by the U.S. Treasury’s FiscalData site. It’s a very simple site, but we drew inspiration from it because it utilizes several small, easily understood visualizations to answer many questions at once and give a larger picture, showing that sometimes less is more. It also has separate pages for going more in depth into each category, allowing for accountability and analysis. 
+  - For the format of our visualizations, we were inspired by the New York Times’ effective use of scrollytelling, particularly in this article about the fire at Notre Dame. We hope to use scrollytelling later in the project as this was a very impactful visualization. We were also inspired by the U.S. Treasury’s FiscalData site. It’s a very simple site, but we drew inspiration from it because it utilizes several small, easily understood visualizations to answer many questions at once and give a larger picture, showing that sometimes less is more. It also has separate pages for going more in depth into each category, allowing for accountability and analysis.
 - Questions:
   - By using data visualizations, we want to see how well the claims mentioned above hold up under scrutiny. We want to answer questions about the rates of crimes committed by foreign-born individuals living in the US, and about the economy, and how it compared under the Biden and Trump administrations. For our own purposes, we also have another set of questions we hope to answer throughout this project. We hope to learn for ourselves how to go about fact checking claims made by politicians, especially those made during a campaign season. We also hope to understand how to make compelling visualizations that will encourage people to think deeper about the claims we are addressing. Politicians work hard to appeal to the public, so we feel it’s important to do the same, even when the truth is inconvenient.
 
 Data: Include information about the source, how you collected it (e.g., web scraping), cleaning methods, etc.
 
+- From our initial proposal to use data from the Survey of Prison Inmates (2016) and the Criminal Alien Statistics, we found that the data that pertains to immigration status for the prison inmates is suppressed due to privacy laws. As a result, we are not able to use the data in our analysis for our migrant crime topic. Immigrant crime statistics and data is very scarce, and in the process of looking for more datasets, we found out that every state does not list immigration status in their crime statistics report or datasets except for Texas. In addition, we realized that the Criminal Alien Statistics only includes arrests for migrants at the border, which is not the focus of our analysis. As a result, we have only one dataset from our original proposal that we can use, so instead we have decided to focus on our second topic for the time being (the economy during the Biden administration) while we try to find a solution to this issue.
+- In terms of our second topic, we have completed cleaning the data, using R, and have finished a few visualizations for our website using Observable Plot.
+
 Exploratory Data Analysis: What visualizations did you use to initially look at your data? What insights did you gain? How did these insights inform your design?
 
-- Design Evolution:
-  - At this time our design choices remain about the same as they did for the project proposal. The site in its current state acts as a proof of concept for a three-fold approach to the visualization, with three pages of the site acting as the intro page and the two claims we will look into. Since our project relies on several smaller visualizations to tell a story rather than a single large visualization, we needed to take that into consideration when planning our design, as many of our defining features rely on the layout of the site rather than the individual visualizations. We thought about using scrollytelling to create one long story starting from the introduction and moving through each topic, however we decided that that could be overwhelming and harder to navigate. We believe that the site design we have now adds the most interactivity while still remaining usable.
+- In our exploratory data analysis, for the dataset we had for national crime statistics, we made a prototype visual on the total number of incidents of violent, property, and sexual crimes and murder in the US.
+![Line Plot Prototype](./images/us_crime_incidents.png)
+From this plot, we see that the overall crime rates have been decreasing since the 1990s and there has not been a rise in crime during the time that the Fox News claimed that there was a "Migrant Crime wave".
+
+Design Evolution:
+
+- At this time our design choices remain about the same as they did for the project proposal. The site in its current state acts as a proof of concept for a three-fold approach to the visualization, with three pages of the site acting as the intro page and the two claims we will look into. Since our project relies on several smaller visualizations to tell a story rather than a single large visualization, we needed to take that into consideration when planning our design, as many of our defining features rely on the layout of the site rather than the individual visualizations. We thought about using scrollytelling to create one long story starting from the introduction and moving through each topic, however we decided that that could be overwhelming and harder to navigate. We believe that the site design we have now adds the most interactivity while still remaining usable.
 
 Initial site prototype
 ![Initial site design](./images/original_intro_page.png)
@@ -107,10 +114,9 @@ Current page 2 (Economy under Biden)
 ![Current design of claim #2](./images/page_2.png)
 Sketch of posible future design
 ![Possible design for claim #2](./images/possible_design.png)
-Having the text and charts be aligned horizontally may imporve readability and visual appeal.
+Having the text and charts be aligned horizontally may improve readability and visual appeal.
 
 - Implementation:
   - We consider our site as a whole to function as our larger visualization, which is then broken into smaller parts where we can explore the data through charts and graphs. The interactivity feature of our site allows the user to switch between topics. As mentioned above, this is our alternative to scrollytelling for the whole project. It gives the user some interactivity and allows them to move through the project without sacrificing overall visual appeal and usability. In the second half of the project, we plan to add more interactive elements within the smaller individual visualizations. We haven’t finalized these ideas yet, but they may come in the form of an interactive choropleth of the United States.  
-- Evaluation: 
+- Evaluation:
   - At this point in the project our main focus was on getting the site up and running, and then in the second half focusing on the data exploration and finalizing the visualizations. We will have more to say in this area towards the end of the project.
-
