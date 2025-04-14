@@ -125,7 +125,7 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
   **/
 
   async function drawInflation() {
-    const data_inf = await d3.csv("inflation.csv", d => ({
+    const data_inf = await d3.csv("data/inflation.csv", d => ({
       date: new Date(d.Date),
       inflation: +d.inflation
     }));
@@ -162,64 +162,21 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
 
   drawInflation();  
 
-  // const chart_inf = Plot.plot({
-  //   width: 900,
-  //   height: 500,
-  //   x: {
-  //     type: "time",
-  //     label: "Date",
-  //     tickFormat: d => d.getFullYear().toString()
-  //   },
-  //   y: {
-  //     label: "Inflation (%)",
-  //     grid: true
-  //   },
-  //   marks: [
-  //     Plot.line(data_inf, {
-  //       x: d => new Date(d.date),
-  //       y: "inflation",
-  //       stroke: "orange"
-  //     }),
-  //     Plot.dot(data_inf, {
-  //       x: d => new Date(d.date),
-  //       y: "inflation",
-  //       r: 2,
-  //       fill: "black"
-  //     })
-  //   ]
-  // });
-
-  // document.getElementById("chart_inf").appendChild(chart_inf);
-
    /**
   GDP rate data
   **/
 
-    // const plot_gdp = Plot.plot({
-    //   width: 800,
-    //   height: 500,
-    //   x: {
-    //     label: "Date",
-    //     tickFormat: d => d.getFullYear(),
-    //   },
-    //   y: {
-    //     label: "GDP (Trillions USD)",
-    //   },
-    //   marks: [
-    //     Plot.line(data, { x: "date", y: "gdp", stroke: "blue" }),
-    //     Plot.dot(data, { x: "date", y: "gdp", fill: "blue" })
-    //   ]
-    // });
-
-    async function drawGDP() {
-      const data_gdp = await d3.csv("GDP.csv", d => ({
+    async function draw_GDP() {
+      const data_gdp = await d3.csv("data/GDP.csv", d => ({
+      // const data_gdp = await d3.csv("data/cleaned_gdp.csv", d => ({
         date: new Date(d.Date),
         gdp: +d.GDP
       }));
     
       const plot_gdp = Plot.plot({
-        width: 900,
+        width: 700,
         height: 500,
+        marginLeft : 50,
         x: {
           type: "time",
           label: "Date",
@@ -247,5 +204,43 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
       document.getElementById("plot_gdp").appendChild(plot_gdp);
     }
 
-    drawGDP(); 
+
+    async function draw_GDP_rate() {
+      // const data_gdp = await d3.csv("GDP.csv", d => ({
+      const data_gdp_rate = await d3.csv("data/cleaned_gdp.csv", d => ({
+        date: new Date(d.Date),
+        gdp: +d.GDP
+      }));
+    
+      const plot_gdp_rate = Plot.plot({
+        width: 500,
+        height: 500,
+        x: {
+          type: "time",
+          label: "Date",
+          tickFormat: d => d.getFullYear().toString()
+        },
+        y: {
+          label: "GDP rate",
+          grid: true
+        },
+        marks: [
+          Plot.line(data_gdp_rate, {
+            x: d => d.date,
+            y: d => d.gdp,
+            stroke: "blue"
+          }),
+          Plot.dot(data_gdp_rate, {
+            x: d => d.date,
+            y: d => d.gdp,
+            r: 2,
+            fill: "black"
+          })
+        ]
+      });
+      document.getElementById("plot_gdp").appendChild(plot_gdp_rate);
+    }
+
+    draw_GDP(); 
+    draw_GDP_rate();
   
