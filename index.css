@@ -63,7 +63,7 @@ p {
     font-size: 20px;
 }
 
-.vid {
+/* .vid {
     display: flex;
     flex-direction: row;
     padding-bottom: 40px;
@@ -77,4 +77,41 @@ p {
 
 div.migrant_crime {
     text-indent: 0px;
-  }
+  } */
+
+.gallery {
+    width:max-content;
+    display: flex;
+    overflow-x:auto;
+}
+
+.gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+
+.gallery::-webkit-scrollbar {
+    display:none;
+}
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+
+#backBtn, #nextBtn {
+    width: 100px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+#backBtn:hover, #nextBtn:hover {
+    filter: grayscale(60%);
+    cursor: pointer;
+}
