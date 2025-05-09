@@ -37,7 +37,7 @@
         </h1><br/>
     </div>
     <div class="img">
-        <img src="Images/Trump_pic.jpg", width = "1600">
+        <img src="Images/Trump_pic.jpg" style="width:100%; max-width:1500px;" alt="Donald Trump speaking at a rally">
         <!-- <iframe width="2000" height="600"
             src="https://www.youtube.com/embed/v-tsoTB7tcY?si=0ZiZvMrLTOvwFqkl?autoplay=1&mute=1">
         </iframe> -->
@@ -56,7 +56,7 @@
     <div class="gallery-wrap">
         <img src="Images/back.png" id="backBtn">
         <div class="gallery">
-            <div class="text">
+            <div class="text gallery-item">
                 <h1>
                     <center>President Donald Trump has made many false claims both throughout his campaigns and his term!</center>
                 </h1>
@@ -66,7 +66,9 @@
                 </p>
             </div>
             <div class="vid">
-                <a href = "https://www.mediamatters.org/fox-news/study-fox-news-ran-nearly-400-weekday-segments-migrant-crime-first-10-weeks-2024" target = "_blank"><img src="Images/fox_new_MC.png", width = "600"></a>
+                <div class="image-wrapper gallery-item">
+                    <a href = "https://www.mediamatters.org/fox-news/study-fox-news-ran-nearly-400-weekday-segments-migrant-crime-first-10-weeks-2024" target = "_blank"><img src="Images/fox_new_MC.png", width = "600"></a>
+                </div>
                 <!-- <iframe width="420" height="315"
                     src="https://www.youtube.com/embed/v-tsoTB7tcY?si=0ZiZvMrLTOvwFqkl?autoplay=1&mute=1">
                 </iframe> -->
@@ -87,7 +89,7 @@
                     <a href="Q1.html">Read more...</a><br/>
                 </div>
             </div><br/>
-            <div class="vid">
+            <div class="vid gallery-item">
                 <a href = "https://www.theguardian.com/business/2025/mar/16/trump-biden-economy" target = "_blank"><img src="Images/trump_biden.png" width = "600"></a>
                 <div class = "biden_economy"> 
                     <h1 style="font-size: 1.3cm;">
@@ -108,6 +110,8 @@
             </div>
         </div>
         <img src="Images/next.png" id="nextBtn">
+
+        <button id="topBtn" title="Go to top">Top</button>
     </div>
     
         
@@ -138,6 +142,19 @@
             scrollContainer.style.scrollBehavior = "smooth";
             scrollContainer.scrollLeft -= scrollContainer.offsetWidth-50;
         })
+
+        let topBtn = document.getElementById("topBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+        topBtn.addEventListener("click", () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
     </script>
    
 </body>

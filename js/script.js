@@ -47,3 +47,4 @@ marginBottom: 80
 });
 
 document.getElementById("chart").appendChild(chart);
+
