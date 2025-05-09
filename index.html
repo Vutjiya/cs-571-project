@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>571 Project</title>
-  <link rel="stylesheet" href="index.css" />  
+  <link rel="stylesheet" href="index.css" /> 
+  <script type = "module" src = "js/script0.js"></script> 
 </head>
 
 <body>
@@ -22,9 +23,6 @@
                     <li>
                         <a href="Q2.html">Study 2: Economy under Biden</a>
                     </li>
-                    <!-- <li>
-                        <a href="Q3.html">Q3</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -38,19 +36,7 @@
     </div>
     <div class="img">
         <img src="Images/Trump_pic.jpg" style="width:100%; max-width:1500px;" alt="Donald Trump speaking at a rally">
-        <!-- <iframe width="2000" height="600"
-            src="https://www.youtube.com/embed/v-tsoTB7tcY?si=0ZiZvMrLTOvwFqkl?autoplay=1&mute=1">
-        </iframe> -->
     </div>
-
-<!--     
-    
-    <center><div class="text">
-        <h1 style="font-size: 1.5cm;">
-        Glossary
-        </h1>
-        <br>
-    </div></center> -->
 
     <br/>
     <div class="gallery-wrap">
@@ -69,9 +55,6 @@
                 <div class="image-wrapper gallery-item">
                     <a href = "https://www.mediamatters.org/fox-news/study-fox-news-ran-nearly-400-weekday-segments-migrant-crime-first-10-weeks-2024" target = "_blank"><img src="Images/fox_new_MC.png", width = "600"></a>
                 </div>
-                <!-- <iframe width="420" height="315"
-                    src="https://www.youtube.com/embed/v-tsoTB7tcY?si=0ZiZvMrLTOvwFqkl?autoplay=1&mute=1">
-                </iframe> -->
                 <div class = "migrant_crime"> 
                     <h1 style="font-size: 1.3cm;">
                         Migrant Crime
@@ -119,44 +102,13 @@
    <div class = 'text'>
     <center><h1>References</h1></center>
    </div>
-   <!-- <p> -->
     <ol>
         <li><a href="https://ycharts.com/indicators/us_unemployment_rate#:~:text=US%20Unemployment%20Rate%20is%20at,but%20are%20without%20a%20job">https://ycharts.com/indicators/us_unemployment_rate#:~:text=US%20Unemployment%20Rate%20is%20at,but%20are%20without%20a%20job</a></li>
         <li><a href = "https://www.statista.com/statistics/193290/unemployment-rate-in-the-usa-since-1990/">https://www.statista.com/statistics/193290/unemployment-rate-in-the-usa-since-1990/</a></li>
         <li><a href = "https://www.usinflationcalculator.com/inflation/current-inflation-rates/">https://www.usinflationcalculator.com/inflation/current-inflation-rates/</a></li>
         <li><a href = "https://fred.stlouisfed.org/series/GDP">https://fred.stlouisfed.org/series/GDP</a></li>
     </ol>
-   <!-- </p> -->
 
-    <script>
-        let scrollContainer = document.querySelector(".gallery");
-        let backBtn = document.getElementById("backBtn");
-        let nextBtn = document.getElementById("nextBtn");
-
-        nextBtn.addEventListener("click", () => {
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft += scrollContainer.offsetWidth-50;
-        })
-
-        backBtn.addEventListener("click", () => {
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft -= scrollContainer.offsetWidth-50;
-        })
-
-        let topBtn = document.getElementById("topBtn");
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                topBtn.style.display = "block";
-            } else {
-                topBtn.style.display = "none";
-            }
-        };
-        topBtn.addEventListener("click", () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-    </script>
-   
 </body>
 
 </html>

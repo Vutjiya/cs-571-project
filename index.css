@@ -64,22 +64,6 @@ p {
     font-size: 15px;
 }
 
-/* .vid {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 40px;
-}
-
-.img {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 30px;
-}
-
-div.migrant_crime {
-    text-indent: 0px;
-  } */
-
 .gallery {
     width:max-content;
     display: flex;
@@ -174,20 +158,20 @@ h1 {
 }
 
 .gallery-wrap {
-    border: 3px solid #000000; /* Choose any color you like */
-    background-color: #f9f9f9; /* Light background to make it pop */
+    border: 3px solid #000000; 
+    background-color: #f9f9f9; 
     padding: 0px;
-    border-radius: 15px; /* Optional: rounded corners */
-    margin: 20px auto; /* Adds spacing around it */
-    max-width: 1600px; /* Limits width to keep it tidy */
+    border-radius: 15px;
+    margin: 20px auto; 
+    max-width: 1600px; 
 }
 
 .gallery-wrap .text,
 .gallery-wrap .migrant_crime,
 .gallery-wrap .biden_economy {
-    background-color: white;  /* Makes the inner boxes white */
-    padding: 15px;            /* Adds breathing room */
-    border-radius: 10px;      /* Optional: rounded corners */
+    background-color: white;  
+    padding: 15px;            
+    border-radius: 10px;     
 }
 
 .gallery-item {
@@ -197,8 +181,8 @@ h1 {
 .image-wrapper {
     background-color: #f9f9f9;
     padding: 10px;
-    display: inline-block;  /* ensures it wraps tightly around the image */
-    border-radius: 8px;     /* optional: rounded corners */ 
+    display: inline-block;  
+    border-radius: 8px;    
 }
 
 .vid {
