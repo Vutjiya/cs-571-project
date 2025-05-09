@@ -2,12 +2,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0 20px;
-    background-color: var(--bg-color);
+    background: inherit;
 }
 
 :root {
     --bg-color: #d8dbe0;
     --text-color: #2f3033;
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -83,6 +84,8 @@ div.migrant_crime {
     width:max-content;
     display: flex;
     overflow-x:auto;
+    background: slategray;
+    border: 2px solid black;
 }
 
 .gallery div {
