@@ -84,8 +84,6 @@ div.migrant_crime {
     width:max-content;
     display: flex;
     overflow-x:auto;
-    background: slategray;
-    border: 2px solid black;
 }
 
 .gallery div {
