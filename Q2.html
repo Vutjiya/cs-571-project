@@ -37,19 +37,24 @@
         <h1 style="font-size: 1.5cm;">
             <center>Economy under Biden</center>
         </h1><br/>
-    </div>
-
-    <div class="text">
         <h2>
             According to Trump, the economy "went to hell" under Biden. But how true was this claim?
         </h2>
+        <div style="text-align: center; margin: 20px;">
+            <label for="dataSelector">Select a data type:</label>
+            <select id="dataSelector">
+                <option value="unemp">Unemployment</option>
+                <option value="inflation">Inflation</option>
+                <option value="gdp">GDP</option>
+            </select>
+        </div>
         <br>
     </div>
 
-
-    <div class="text">
+    <div class="data-section" id="section_unemp">
+        <div class="text">
         <p>
-            First let's consider the unemployment rate.
+            Consider the unemployment rate.
             When we compare and contrast (un)employment rates, we have to be careful to disregard COVID-19, a non-political aspect that caused a major dent in the economy out of other things. From the point of view of unemployability, it's major impact was seen from 2020-2022, and stablized after that. Outside this range, the unemployment rate during the Biden administration was 3.4 - 4.2%, reaching the minimum that the US economy has seen in more than the last 35 years. Furthermore, this averaged around 3.7%, which was the lowest the rate ever got during Trump's administration.
             <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque odio amet perferendis alias sunt? Doloribus, consequuntur quos. Reiciendis similique illum eaque, ipsa doloremque voluptates nesciunt dolores. Delectus, eaque modi. -->
 
@@ -57,9 +62,12 @@
             <!-- https://www.statista.com/statistics/193290/unemployment-rate-in-the-usa-since-1990/ -->
         </p>
         <br>
+        </div>
+        <center><div id="chart_unemp" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
     </div>
 
-    <center><div id="chart_unemp" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
+    <div class="data-section" id="section_inflation">
+   
     <!-- <right><div id="bar_unemp"></div></right> -->
 
     <div class="text">
@@ -69,13 +77,14 @@
         </p>
         <br>
     </div>
-
     <center><div id="chart_inf"></div></center>
-    
+</div>
 
+    
+    <div class="data-section" id="section_gdp">
     <div class="text">
         <p>
-            To conclude our argument, we now consider the GDP. The GDP has steadily increased, and post-pandemic, the economic growth has been considerably better than that of France, Germany and other G7 nations. If we look at the GDP growth rate, there's no significant difference from the previous administrations either.
+            Consider the GDP. The GDP has steadily increased, and post-pandemic, the economic growth has been considerably better than that of France, Germany and other G7 nations. If we look at the GDP growth rate, there's no significant difference from the previous administrations either.
             <!-- https://fred.stlouisfed.org/series/GDP -->
         </p>
         <br>
@@ -84,6 +93,34 @@
 
     <center><div id="plot_gdp" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
   <script type="module" src="js/script2.js"></script>
+  </div>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdown = document.getElementById('dataSelector');
+        const sections = {
+            unemp: document.getElementById('section_unemp'),
+            inflation: document.getElementById('section_inflation'),
+            gdp: document.getElementById('section_gdp')
+        };
+
+        // Initially show the first section and hide the rest
+        function showSection(selected) {
+            for (const key in sections) {
+                if (sections[key]) {
+                    sections[key].style.display = (key === selected) ? 'block' : 'none';
+                }
+            }
+        }
+
+        dropdown.addEventListener('change', function () {
+            showSection(this.value);
+        });
+
+        // Initialize
+        showSection(dropdown.value);
+    });
+</script>
 
 </html>
