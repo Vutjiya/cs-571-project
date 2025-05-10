@@ -281,3 +281,131 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
     draw_GDP(); 
     draw_GDP_rate();
   
+// async function draw_unemployment() {
+//   const us = await fetch("../data/us_states.json").then(res => res.json());
+//   const unemployment_data = await fetch("../data/state_unemployment.csv")
+//     .then(res => res.text())
+//     .then(text => d3.csvParse(text, d3.autoType));
+
+//   // Filter for latest month: Nov 2022
+//   const latest = unemployment_data.filter(d => d.year === 2022 && d.month === "Nov");
+//   console.log(latest)
+
+  // Create a Map using exact state names (case-sensitive)
+//   const unemploymentByState = new Map(latest.map(d => [d.state, d.unemployment]));
+
+//   const chart = Plot.plot({
+//     projection: "albers-usa",
+//     color: {
+//       scheme: "YlOrRd",
+//       legend: true,
+//       label: "Unemployment (Nov 2022)"
+//     },
+//     marks: [
+//       Plot.geo(us, {
+//         fill: d => {
+//           const stateName = d.properties.NAME;
+//           const rate = unemploymentByState.get(stateName.toLowerCase());
+//           return rate ?? "#ccc"; // fallback if not found
+//         },
+//         stroke: "white",
+//         title: d => {
+//           const stateName = d.properties.NAME;
+//           const rate = unemploymentByState.get(stateName.toLowerCase());
+//           return rate !== undefined
+//             ? `${stateName}\n${rate.toLocaleString()}`
+//             : `${stateName}\nData not available`;
+//         }
+//       }),
+//       Plot.geo(us, {
+//         stroke: "black",
+//         fill: "none"
+//       })
+//     ],
+//     width: 800,
+//     height: 500
+//   });
+
+//   // document.getElementById("chart_unemp").appendChild(chart);
+
+//   const container = document.getElementById("chart_unemp");
+//   container.innerHTML = "";
+//   container.appendChild(chart);
+// }
+
+// draw_unemployment();
+
+let us, unemploymentData;
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const timeSteps = [];
+for (let year = 2020; year <= 2024; year++) {
+  for (let m = 0; m < 12; m++) {
+    timeSteps.push({ year, month: months[m] });
+  }
+}
+
+async function loadData() {
+  us = await fetch("../data/us_states.json").then(res => res.json());
+  const csvText = await fetch("../data/state_unemployment.csv").then(res => res.text());
+  unemploymentData = d3.csvParse(csvText, d3.autoType);
+}
+
+function updateMap(index) {
+  const { year, month } = timeSteps[index];
+  document.getElementById("timeLabel").textContent = `${month} ${year}`;
+
+  const filtered = unemploymentData.filter(
+    d => d.year === year && d.month.toLowerCase() === month.toLowerCase()
+  );
+
+  const dataMap = new Map(filtered.map(d => [d.state.toLowerCase(), d.rate]));
+
+  const chart = Plot.plot({
+    projection: "albers-usa",
+    color: {
+      scheme: "YlOrRd",
+      legend: true,
+      label: `Unemployment (${month} ${year})`
+    },
+    marks: [
+      Plot.geo(us, {
+        fill: d => dataMap.get(d.properties.NAME.toLowerCase()) ?? "#ccc",
+        stroke: "white",
+        title: d => {
+          const state = d.properties.NAME;
+          const rate = dataMap.get(state.toLowerCase());
+          return rate !== undefined
+            ? `${state}\n${rate.toLocaleString()}`
+            : `${state}\nData not available`;
+        }
+      }),
+      Plot.geo(us, {
+        stroke: "black",
+        fill: "none"
+      })
+    ],
+    width: 800,
+    height: 500
+  });
+
+  const container = document.getElementById("chart_unemp");
+  container.innerHTML = "";
+  container.appendChild(chart);
+}
+
+async function main() {
+  await loadData();
+
+  const timeSlider = document.getElementById("timeSlider");
+  timeSlider.max = timeSteps.length - 1;
+
+  const update = () => {
+    const index = +timeSlider.value;
+    updateMap(index);
+  };
+
+  timeSlider.addEventListener("input", update);
+  update(); // initial draw
+}
+
+main();
