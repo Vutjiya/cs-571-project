@@ -291,8 +291,8 @@ for (let year = 2020; year <= 2024; year++) {
 }
 
 async function loadData() {
-  us = await fetch("../data/us_states.json").then(res => res.json());
-  const csvText = await fetch("../data/state_unemployment.csv").then(res => res.text());
+  us = await fetch("data/us_states.json").then(res => res.json());
+  const csvText = await fetch("data/state_unemployment.csv").then(res => res.text());
   unemploymentData = d3.csvParse(csvText, d3.autoType);
 }
 
