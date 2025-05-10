@@ -57,68 +57,68 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
 
   data_unemp.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  // const chart_unemp = Plot.plot({
-  //   x: {
-  //     label: "Date",
-  //     type: "utc",
-  //     tickFormat: "%b %Y",
-  //     tickRotate: -45
-  //   },
-  //   y: {
-  //     label: "Unemployment Rate (%)",
-  //     grid: true
-  //   },
-  //   marks: [
-  //     Plot.line(data_unemp, {
-  //       x: d => new Date(d.date),
-  //       y: "rate",
-  //       stroke: "indigo"
-  //     }),
-  //     Plot.dot(data_unemp, {
-  //       x: d => new Date(d.date),
-  //       y: "rate",
-  //       fill: "indigo"
-  //     })
-  //   ],
-  //   height: 500,
-  //   marginLeft: 20,
-  //   marginBottom: 80,
-  //   style: {
-  //     fontSize: "14px",
-  //     fontFamily: "sans-serif"
-  //   }
-  // });
+  const chart_unemp2 = Plot.plot({
+    x: {
+      label: "Date",
+      type: "utc",
+      tickFormat: "%b %Y",
+      tickRotate: -45
+    },
+    y: {
+      label: "Unemployment Rate (%)",
+      grid: true
+    },
+    marks: [
+      Plot.line(data_unemp, {
+        x: d => new Date(d.date),
+        y: "rate",
+        stroke: "indigo"
+      }),
+      Plot.dot(data_unemp, {
+        x: d => new Date(d.date),
+        y: "rate",
+        fill: "indigo"
+      })
+    ],
+    height: 500,
+    marginLeft: 20,
+    marginBottom: 80,
+    style: {
+      fontSize: "14px",
+      fontFamily: "sans-serif"
+    }
+  });
 
-  // const avg_data = [
-  //   { period: "Avg 2017-2019", value: 4, color : "red" },
-  //   { period: "Avg 2022-2025", value: 3.7, color : "blue" }
-  // ];
+  const avg_data = [
+    { period: "Avg 2017-2019", value: 4, color : "red" },
+    { period: "Avg 2022-2025", value: 3.7, color : "blue" }
+  ];
 
-  // const bar_chart = Plot.plot({
-  //   width: 300,
-  //   height: 500,
-  //   marginBottom: 20,
-  //   x: {
-  //     label: null
-  //   },
-  //   y: {
-  //     label: "Unemployment Rate (%)",
-  //     domain: [0, 5] 
-  //   },
-  //   marks: [
-  //     Plot.barY(avg_data, { x: "period", y: "value", fill: "color"}),
-  //     Plot.text(avg_data, {
-  //       x: "period",
-  //       y: "value",
-  //       dy: -10,
-  //       text: d => d.value.toFixed(1),
-  //       fill: "black"
-  //     })
-  //   ]
-  // });
+  const bar_chart = Plot.plot({
+    width: 300,
+    height: 500,
+    marginBottom: 20,
+    x: {
+      label: null
+    },
+    y: {
+      label: "Unemployment Rate (%)",
+      domain: [0, 5] 
+    },
+    marks: [
+      Plot.barY(avg_data, { x: "period", y: "value", fill: "color"}),
+      Plot.text(avg_data, {
+        x: "period",
+        y: "value",
+        dy: -10,
+        text: d => d.value.toFixed(1),
+        fill: "black"
+      })
+    ]
+  });
   
-  // document.getElementById("chart_unemp").appendChild(chart_unemp);
-  // document.getElementById("chart_unemp").appendChild(bar_chart);
+  document.getElementById("chart_unemp2").appendChild(chart_unemp2);
+  document.getElementById("chart_unemp2").appendChild(bar_chart);
 
   /**
   Inflation rate data
@@ -281,60 +281,6 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
     draw_GDP(); 
     draw_GDP_rate();
   
-// async function draw_unemployment() {
-//   const us = await fetch("../data/us_states.json").then(res => res.json());
-//   const unemployment_data = await fetch("../data/state_unemployment.csv")
-//     .then(res => res.text())
-//     .then(text => d3.csvParse(text, d3.autoType));
-
-//   // Filter for latest month: Nov 2022
-//   const latest = unemployment_data.filter(d => d.year === 2022 && d.month === "Nov");
-//   console.log(latest)
-
-  // Create a Map using exact state names (case-sensitive)
-//   const unemploymentByState = new Map(latest.map(d => [d.state, d.unemployment]));
-
-//   const chart = Plot.plot({
-//     projection: "albers-usa",
-//     color: {
-//       scheme: "YlOrRd",
-//       legend: true,
-//       label: "Unemployment (Nov 2022)"
-//     },
-//     marks: [
-//       Plot.geo(us, {
-//         fill: d => {
-//           const stateName = d.properties.NAME;
-//           const rate = unemploymentByState.get(stateName.toLowerCase());
-//           return rate ?? "#ccc"; // fallback if not found
-//         },
-//         stroke: "white",
-//         title: d => {
-//           const stateName = d.properties.NAME;
-//           const rate = unemploymentByState.get(stateName.toLowerCase());
-//           return rate !== undefined
-//             ? `${stateName}\n${rate.toLocaleString()}`
-//             : `${stateName}\nData not available`;
-//         }
-//       }),
-//       Plot.geo(us, {
-//         stroke: "black",
-//         fill: "none"
-//       })
-//     ],
-//     width: 800,
-//     height: 500
-//   });
-
-//   // document.getElementById("chart_unemp").appendChild(chart);
-
-//   const container = document.getElementById("chart_unemp");
-//   container.innerHTML = "";
-//   container.appendChild(chart);
-// }
-
-// draw_unemployment();
-
 let us, unemploymentData;
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const timeSteps = [];
@@ -414,6 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdown = document.getElementById('dataSelector');
   const sections = {
       unemp: document.getElementById('section_unemp'),
+      unemp2: document.getElementById('section_unemp2'),
       inflation: document.getElementById('section_inflation'),
       gdp: document.getElementById('section_gdp')
   };

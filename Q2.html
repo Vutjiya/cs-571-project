@@ -42,7 +42,8 @@
         <div style="text-align: center; margin: 20px;">
             <label for="dataSelector">Select a data type:</label>
             <select id="dataSelector">
-                <option value="unemp">Unemployment</option>
+                <option value="unemp">Unemployment Map</option>
+                <option value="unemp2">Unemployment Charts</option>
                 <option value="inflation">Inflation</option>
                 <option value="gdp">GDP</option>
             </select>
@@ -56,17 +57,24 @@
         <input type="range" id="timeSlider" min="0" max="60" step="1" value="59" style="width: 100%;">
         <span id="timeLabel"></span>
         <div class="text">
+        <br>
+        </div>
+        <center><div id="chart_unemp" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
+    </div>
+
+    <div class="data-section" id="section_unemp2">
+        <div class="text">
         <p>
-            If we compare and contrast (un)employment rates, we have to be careful to disregard COVID-19, a non-political aspect that caused a major dent in the economy out of other things. From the point of view of unemployability, it's major impact was seen from 2020-2022, and stablized after that. Outside this range, the unemployment rate during the Biden administration was 3.4 - 4.2%, reaching the minimum that the US economy has seen in more than the last 35 years. Furthermore, this averaged around 3.7%, which was the lowest the rate ever got during Trump's administration.
-            <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque odio amet perferendis alias sunt? Doloribus, consequuntur quos. Reiciendis similique illum eaque, ipsa doloremque voluptates nesciunt dolores. Delectus, eaque modi. -->
+            If we compare and contrast unemployment rates, we have to be careful to disregard COVID-19, a non-political aspect that caused a major dent in the economy. As of unemployment, the major impact of COVID was seen during 2020-2022, after which it stablized. Outside this range, the unemployment rate during the Biden administration was 3.4 - 4.2%, reaching the minimum that the US economy has seen in over 35 years. Furthermore, the lowest the rate ever got during Trump's administration was the average during Biden's term (3.7%).
 
             <!-- https://ycharts.com/indicators/us_unemployment_rate#:~:text=US%20Unemployment%20Rate%20is%20at,but%20are%20without%20a%20job -->
             <!-- https://www.statista.com/statistics/193290/unemployment-rate-in-the-usa-since-1990/ -->
         </p>
         <br>
         </div>
-        <center><div id="chart_unemp" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
+        <center><div id="chart_unemp2" style="display: flex; flex-direction: row; align-items: flex-start; gap: 40px; flex-wrap: wrap;"></div></center>
     </div>
+
 
     <div class="data-section" id="section_inflation">
    
