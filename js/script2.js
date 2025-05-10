@@ -57,68 +57,68 @@ const data_unemp = [{ date: "2025-03-31", rate: 4.2 },
 
   data_unemp.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  const chart_unemp = Plot.plot({
-    x: {
-      label: "Date",
-      type: "utc",
-      tickFormat: "%b %Y",
-      tickRotate: -45
-    },
-    y: {
-      label: "Unemployment Rate (%)",
-      grid: true
-    },
-    marks: [
-      Plot.line(data_unemp, {
-        x: d => new Date(d.date),
-        y: "rate",
-        stroke: "indigo"
-      }),
-      Plot.dot(data_unemp, {
-        x: d => new Date(d.date),
-        y: "rate",
-        fill: "indigo"
-      })
-    ],
-    height: 500,
-    marginLeft: 20,
-    marginBottom: 80,
-    style: {
-      fontSize: "14px",
-      fontFamily: "sans-serif"
-    }
-  });
+  // const chart_unemp = Plot.plot({
+  //   x: {
+  //     label: "Date",
+  //     type: "utc",
+  //     tickFormat: "%b %Y",
+  //     tickRotate: -45
+  //   },
+  //   y: {
+  //     label: "Unemployment Rate (%)",
+  //     grid: true
+  //   },
+  //   marks: [
+  //     Plot.line(data_unemp, {
+  //       x: d => new Date(d.date),
+  //       y: "rate",
+  //       stroke: "indigo"
+  //     }),
+  //     Plot.dot(data_unemp, {
+  //       x: d => new Date(d.date),
+  //       y: "rate",
+  //       fill: "indigo"
+  //     })
+  //   ],
+  //   height: 500,
+  //   marginLeft: 20,
+  //   marginBottom: 80,
+  //   style: {
+  //     fontSize: "14px",
+  //     fontFamily: "sans-serif"
+  //   }
+  // });
 
-  const avg_data = [
-    { period: "Avg 2017-2019", value: 4, color : "red" },
-    { period: "Avg 2022-2025", value: 3.7, color : "blue" }
-  ];
+  // const avg_data = [
+  //   { period: "Avg 2017-2019", value: 4, color : "red" },
+  //   { period: "Avg 2022-2025", value: 3.7, color : "blue" }
+  // ];
 
-  const bar_chart = Plot.plot({
-    width: 300,
-    height: 500,
-    marginBottom: 20,
-    x: {
-      label: null
-    },
-    y: {
-      label: "Unemployment Rate (%)",
-      domain: [0, 5] 
-    },
-    marks: [
-      Plot.barY(avg_data, { x: "period", y: "value", fill: "color"}),
-      Plot.text(avg_data, {
-        x: "period",
-        y: "value",
-        dy: -10,
-        text: d => d.value.toFixed(1),
-        fill: "black"
-      })
-    ]
-  });
+  // const bar_chart = Plot.plot({
+  //   width: 300,
+  //   height: 500,
+  //   marginBottom: 20,
+  //   x: {
+  //     label: null
+  //   },
+  //   y: {
+  //     label: "Unemployment Rate (%)",
+  //     domain: [0, 5] 
+  //   },
+  //   marks: [
+  //     Plot.barY(avg_data, { x: "period", y: "value", fill: "color"}),
+  //     Plot.text(avg_data, {
+  //       x: "period",
+  //       y: "value",
+  //       dy: -10,
+  //       text: d => d.value.toFixed(1),
+  //       fill: "black"
+  //     })
+  //   ]
+  // });
   
-  document.getElementById("chart_unemp").appendChild(chart_unemp);
-  document.getElementById("chart_unemp").appendChild(bar_chart);
+  // document.getElementById("chart_unemp").appendChild(chart_unemp);
+  // document.getElementById("chart_unemp").appendChild(bar_chart);
 
   /**
   Inflation rate data
@@ -409,3 +409,28 @@ async function main() {
 }
 
 main();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdown = document.getElementById('dataSelector');
+  const sections = {
+      unemp: document.getElementById('section_unemp'),
+      inflation: document.getElementById('section_inflation'),
+      gdp: document.getElementById('section_gdp')
+  };
+
+  // Initially show the first section and hide the rest
+  function showSection(selected) {
+      for (const key in sections) {
+          if (sections[key]) {
+              sections[key].style.display = (key === selected) ? 'block' : 'none';
+          }
+      }
+  }
+
+  dropdown.addEventListener('change', function () {
+      showSection(this.value);
+  });
+
+  // Initialize
+  showSection(dropdown.value);
+});

@@ -31,7 +31,6 @@
         </div>
     </nav>
     <hr>
-    <script src="js/main.js"></script>
 
     <div class="page-body">
         <h1 style="font-size: 1.5cm;">
@@ -47,6 +46,7 @@
                 <option value="inflation">Inflation</option>
                 <option value="gdp">GDP</option>
             </select>
+            <button id="topBtn" title="Go to top">Top</button>
         </div>
         <br>
     </div>
@@ -97,32 +97,5 @@
   <script type="module" src="js/script2.js"></script>
   </div>
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const dropdown = document.getElementById('dataSelector');
-        const sections = {
-            unemp: document.getElementById('section_unemp'),
-            inflation: document.getElementById('section_inflation'),
-            gdp: document.getElementById('section_gdp')
-        };
-
-        // Initially show the first section and hide the rest
-        function showSection(selected) {
-            for (const key in sections) {
-                if (sections[key]) {
-                    sections[key].style.display = (key === selected) ? 'block' : 'none';
-                }
-            }
-        }
-
-        dropdown.addEventListener('change', function () {
-            showSection(this.value);
-        });
-
-        // Initialize
-        showSection(dropdown.value);
-    });
-</script>
 
 </html>
