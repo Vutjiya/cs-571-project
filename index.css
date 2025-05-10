@@ -188,3 +188,28 @@ h1 {
 .vid {
     background-color: #f9f9f9;
 }
+
+.project-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.project-button {
+    padding: 16px 26px;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 22px;
+    transition: background-color 0.3s ease;
+    border: 2px solid steelblue;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.project-button:hover {
+    background-color: steelblue;
+    text-decoration: none;
+    color: black;
+}
