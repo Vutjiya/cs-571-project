@@ -122,8 +122,10 @@ Having the text and charts be aligned horizontally may improve readability and v
 - Implementation:
   - We consider our site as a whole to function as our larger visualization, which is then broken into smaller parts where we can explore the data through charts and graphs. The interactivity feature of our site allows the user to switch between different aspects of the economy on the 2nd question page. We also added a gallery on our intro page to make the site more engaging overall. 
 
-\![Gallery](./images/gallery.png)
-\![Choropleth](./images/choropleth.png)
+Gallery\
+![Gallery](./images/gallery.png)
+Choropleth\
+![Choropleth](./images/choropleth.png)
 
 - Evaluation:
   - (add: what did you learn about your data by using your visualizations? how did you answer your research questions?) The biggest issue we had related to the data for our question about migrant crime. Due to privacy laws, many datasets we planned to use didn't include descriptions about immigration status, so we ended up having to scrap most of it. Another area that we could improve upon is the interactivity. We hoped to use scrollytelling, but due to a combination of time constraints and difficulty integrating existing designs, we were unable to add this as a feature. Instead, we opted to add interactivity by changing the diagrams, and adding hover features to the choropleth. 
