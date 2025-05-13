@@ -110,14 +110,11 @@ Design Evolution:
 
 Initial site prototype\
 ![Initial site design](./images/original_intro_page.png)
-Current site design\
+Site design (milestone)\
 ![Updated site design #1](./images/updated_intro_page.png)
 ![Updated site design #2](./images/updated_intro_page_2.png)
 Current page 2 (Economy under Biden)\
 ![Current design of claim #2](./images/page_2.png)
-Sketch of posible future design\
-![Possible design for claim #2](./images/possible_design.png)
-Having the text and charts be aligned horizontally may improve readability and visual appeal.
 
 - Implementation:
   - We consider our site as a whole to function as our larger visualization, which is then broken into smaller parts where we can explore the data through charts and graphs. The interactivity feature of our site allows the user to switch between different aspects of the economy on the 2nd question page. We also added a gallery on our intro page to make the site more engaging overall. 
