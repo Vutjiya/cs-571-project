@@ -111,10 +111,13 @@ Design Evolution:
 Initial site prototype\
 ![Initial site design](./images/original_intro_page.png)
 Site design (milestone)\
-![Updated site design #1](./images/updated_intro_page.png)
-![Updated site design #2](./images/updated_intro_page_2.png)
-Current page 2 (Economy under Biden)\
-![Current design of claim #2](./images/page_2.png)
+![Updated site design for milestone #1](./images/updated_intro_page.png)
+![Updated site design for milestone #2](./images/updated_intro_page_2.png)
+Milestone page 2 (Economy under Biden)\
+![Design of claim #2 for milestone](./images/page_2.png)
+Final site design\
+![Final site design #1](./images/final_site.png)
+![Final site design #2](./images/final_site2.png)
 
 - Implementation:
   - We consider our site as a whole to function as our larger visualization, which is then broken into smaller parts where we can explore the data through charts and graphs. The interactivity feature of our site allows the user to switch between different aspects of the economy on the 2nd question page. We also added a gallery on our intro page to make the site more engaging overall. 
